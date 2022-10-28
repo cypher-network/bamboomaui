@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:fonts="clr-namespace:Bamboomaui.Resources.Fonts"
+             xmlns:vm="clr-namespace:Bamboomaui.ViewModels"
+             x:Class="Bamboomaui.Views.WelcomePage"
+             x:DataType="vm:WelcomePageViewModel">
+
+    <ContentPage.Resources>
+        <ControlTemplate x:Key="Keyboard">
+            <Border>
+                <ContentPresenter/>
+            </Border>
+        </ControlTemplate>
+        <Style TargetType="ContentView">
+        <Setter Property="ControlTemplate" Value="{StaticResource Keyboard}"/>
+    </Style>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+            <Image
+                Source="https://cypherpunks.network/assets/images/cypherpunks-logo-black-2-tone-400x100.png"
+                SemanticProperties.Description="write code: Making things work"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+            
+            <Label
+                Text="Welcome to"
+                SemanticProperties.HeadingLevel="Level3"
+                FontSize="14"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Bamboo Wallet"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+            
+            <Label
+                Text="Awesome wallet for Tangram and Cypherpunks"
+                SemanticProperties.HeadingLevel="Level4"
+                FontSize="14"
+                HorizontalOptions="Center" />
+            
+            
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="25">
+                <Button
+                    x:Name="NewWalletBtn"
+                    Text="{x:Static fonts:FontAwesomeIcons.Plus}"
+                    SemanticProperties.Hint="New Wallet"
+                    FontFamily="FASolid"
+                    Command="{Binding NewWalletButtonClickedCommand}"
+                    HorizontalOptions="Center"/>
+            
+                <Button
+                    x:Name="RestoreWalletBtn"
+                    Text="{x:Static fonts:FontAwesomeIcons.Recycle}"
+                    SemanticProperties.Hint="Restore"
+                    FontFamily="FASolid"
+                    Command="{Binding RestoreWalletButtonClickedCommand}"
+                    HorizontalOptions="Center"/>
+                
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:fonts="clr-namespace:Bamboomaui.Resources.Fonts"
+             xmlns:vm="clr-namespace:Bamboomaui.ViewModels"
+             x:Class="Bamboomaui.Views.ProfilePage"
+             x:DataType="vm:ProfilePageViewModel">
+
+    
+    <ScrollView>
+        
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            
+            <Label
+                Text="52℉"
+                HorizontalOptions="Center"
+                class="Title1" />
+
+            <Border BackgroundColor="{StaticResource Primary}"
+                    Stroke="Transparent"
+                    StrokeThickness="1"
+                    HorizontalOptions="Center"
+                    Padding="15,4">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="60"/>
+                </Border.StrokeShape>
+                <Label
+                    Text="Clear"
+                    TextColor="{StaticResource White}"
+                    HorizontalOptions="Center"
+                    FontSize="18"/>
+            </Border>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
